@@ -122,7 +122,7 @@ public class GrapplingGun : MonoBehaviour
                 if (Vector2.Distance(_hit.point, firePoint.position) <= maxDistnace || !hasMaxDistance)
                 {
                     grapplePoint = _hit.point;
-                    grappleDistanceVector = grapplePoint - (Vector2)gunPivot.position;
+                    grappleDistanceVector = grapplePoint - (Vector2)gunPivot.position ;
                     grappleRope.enabled = true;
                 }
             }

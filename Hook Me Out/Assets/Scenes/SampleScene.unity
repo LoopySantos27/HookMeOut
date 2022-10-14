@@ -1059,7 +1059,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299067280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.097, y: -0.025, z: 0}
+  m_LocalPosition: {x: 0.095, y: 0.003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1370,7 +1370,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509699642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.031, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1439,8 +1439,8 @@ MonoBehaviour:
   hasMaxDistance: 0
   maxDistnace: 10
   launchToPoint: 0
-  launchType: 1
-  launchSpeed: 2.82
+  launchType: 0
+  launchSpeed: 3
   autoConfigureDistance: 0
   targetDistance: 3
   targetFrequncy: 1
@@ -1606,7 +1606,7 @@ Transform:
   m_GameObject: {fileID: 1720526780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.9, y: -0.58, z: 0}
-  m_LocalScale: {x: 11.358489, y: 11.676844, z: 7.689722}
+  m_LocalScale: {x: 7.342695, y: 7.5484953, z: 4.9710207}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1509699643}
@@ -1682,7 +1682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef1690cc542db9145862161d41e827b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 3
+  movementSpeed: 4
   jumpForce: 5
   layerGround:
     serializedVersion: 2

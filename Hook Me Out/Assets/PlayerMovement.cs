@@ -19,22 +19,24 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(Vector2.right * (Time.deltaTime * movementSpeed), Space.World);
-        }
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(Vector2.left * (Time.deltaTime * movementSpeed),Space.World);
-        }
+        float horizontalInput = Input.GetAxis("Horizontal");
+        //float verticalInput = Input.GetAxis("Vertical");
+
+        Vector2 movement = new Vector2 (horizontalInput,0);
+        movement.Normalize();
+
+        transform.Translate(movement * movementSpeed * Time.deltaTime);
+
+       
 
         RaycastHit2D HitGround;
         Debug.DrawRay(transform.position, Vector2.down *  1f, Color.red);
         if(Physics2D.Raycast(transform.position, Vector2.down , 1.5f, layerGround))
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button0))
             {
+                print(Input.GetKey(KeyCode.Joystick1Button0));
                 rigiBody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             }
         }
