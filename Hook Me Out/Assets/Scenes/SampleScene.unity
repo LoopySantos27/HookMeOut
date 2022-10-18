@@ -1059,7 +1059,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299067280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.095, y: 0.003, z: 0}
+  m_LocalPosition: {x: 0.74, y: 0.003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1380,7 +1380,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509699642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.031, y: 0, z: 0}
+  m_LocalPosition: {x: -0.067, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1415,7 +1415,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646141607}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.133, y: 0, z: 0}
+  m_LocalPosition: {x: 0.118, y: 0, z: 0}
   m_LocalScale: {x: 0.77394384, y: 0.77394384, z: 0.77394384}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1452,7 +1452,7 @@ MonoBehaviour:
   launchType: 0
   launchSpeed: 3
   autoConfigureDistance: 0
-  targetDistance: 3
+  targetDistance: 1
   targetFrequncy: 1
   grapplePoint: {x: 0, y: 0}
   grappleDistanceVector: {x: 0, y: 0}
