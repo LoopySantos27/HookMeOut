@@ -19,6 +19,11 @@ public class ManagerScene : MonoBehaviour
         
     }
 
+
+    public void ResetLevel()
+    {
+
+    }
     public void GoToPlay()
     {
         soundManager.PlayButton();

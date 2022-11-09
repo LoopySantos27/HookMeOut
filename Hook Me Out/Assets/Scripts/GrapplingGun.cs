@@ -1,7 +1,12 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GrapplingGun : MonoBehaviour
 {
+    private Vector3 _joystickAxis;
+    [SerializeField]
+    private PlayerInput _playerInput;
+
     [Header("Scripts Ref:")]
     public GrapplingRope grappleRope;
 
@@ -70,10 +75,8 @@ public class GrapplingGun : MonoBehaviour
             }
             else
             {
-                Vector2 joysticksPosition = Vector2.zero;
-                joysticksPosition.x = Input.GetAxis("RightJoystickHorizontal");
-                joysticksPosition.y = Input.GetAxis("RightJoystickVertical");
-                RotateGun(joysticksPosition, true);
+                
+                RotateGun(_joystickAxis, true);
 
                 /*Vector2 mousePos = m_camera.ScreenToWorldPoint(Input.mousePosition);
                 RotateGun(mousePos, true);*/
@@ -97,29 +100,28 @@ public class GrapplingGun : MonoBehaviour
         }
         else
         {
-            Vector2 joysticksPosition = Vector2.zero;
-            joysticksPosition.x = Input.GetAxis("RightJoystickHorizontal");
-            joysticksPosition.y = Input.GetAxis("RightJoystickVertical");
-            RotateGun(joysticksPosition, true);
+            
+            RotateGun(_joystickAxis, false);
 
             /*Vector2 mousePos = m_camera.ScreenToWorldPoint(Input.mousePosition);
             RotateGun(mousePos, true);*/
         }
     }
 
+    //Necesitamos saber hacia donde rotar y si se puede
     void RotateGun(Vector3 lookPoint, bool allowRotationOverTime)
     {
+        //Verificar si el joystick vale algo 
+        if(lookPoint == Vector3.zero)
+        {
+            return;
+        }
         Vector3 distanceVector = lookPoint - gunPivot.position;
 
-        float angle = Mathf.Atan2(distanceVector.y, distanceVector.x) * Mathf.Rad2Deg;
-        if (rotateOverTime && allowRotationOverTime)
-        {
-            gunPivot.rotation = Quaternion.Lerp(gunPivot.rotation, Quaternion.AngleAxis(angle, Vector3.forward), Time.deltaTime * rotationSpeed);
-        }
-        else
-        {
-            gunPivot.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        }
+        float angle = Mathf.Atan2(lookPoint.y, lookPoint.x) * Mathf.Rad2Deg;
+
+        gunPivot.rotation = Quaternion.Lerp(gunPivot.rotation, Quaternion.AngleAxis(angle, Vector3.forward), Time.deltaTime * rotationSpeed);
+
     }
 
     //CONTROL
@@ -213,5 +215,8 @@ public class GrapplingGun : MonoBehaviour
             Gizmos.DrawWireSphere(firePoint.position, maxDistnace);
         }
     }
-
+    public void GunRotation(InputAction.CallbackContext context)
+    {
+        _joystickAxis = context.ReadValue<Vector2>();
+    }
 }
