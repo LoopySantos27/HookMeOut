@@ -127,15 +127,16 @@ public class GrapplingGun : MonoBehaviour
     //CONTROL
     void SetGrapplePoincontroll()
     {
-        Vector3 vectorDistanceGun = Vector3.zero;
-        vectorDistanceGun.y = Input.GetAxis("RightJoystickVertical");
-        vectorDistanceGun.x = Input.GetAxis("RightJoystickHorizontal");
+        Vector3 vectorDistanceGun = _joystickAxis;
+        //vectorDistanceGun.y = _joystickAxis.y;
+        //vectorDistanceGun.x =  _joystickAxis.x;
+        //Audio
+        AudioManager.instance.Play("GunHook");
+        //Vector2 distanceVector = vectorDistanceGun - gunPivot.position;
 
-        Vector2 distanceVector = vectorDistanceGun - gunPivot.position;
-
-        if (Physics2D.Raycast(firePoint.position, distanceVector.normalized))
+        if (Physics2D.Raycast(firePoint.position, vectorDistanceGun.normalized))
         {
-            RaycastHit2D _hit = Physics2D.Raycast(firePoint.position, distanceVector.normalized);
+            RaycastHit2D _hit = Physics2D.Raycast(firePoint.position, vectorDistanceGun.normalized);
             if (_hit.transform.gameObject.layer == grappableLayerNumber || grappleToAll)
             {
                 if (Vector2.Distance(_hit.point, firePoint.position) <= maxDistnace || !hasMaxDistance)
@@ -146,7 +147,8 @@ public class GrapplingGun : MonoBehaviour
                 }
             }
         }
-    }
+        
+      }
 
     //MOUSE
     void SetGrapplePoint()

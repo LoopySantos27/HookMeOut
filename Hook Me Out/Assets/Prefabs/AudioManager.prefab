@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4115426314516055691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4115426314516055688}
+  - component: {fileID: 4115426314516055689}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4115426314516055688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4115426314516055691}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.755231, y: 0.19495234, z: 0.021117132}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4115426314516055689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4115426314516055691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8614b0c60c0908149ba44f067762d1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - _nameClip: GunHook
+    _clip: {fileID: 8300000, guid: 61afb97cfbacbd54794d536faeb93099, type: 3}
+    _volume: 0.52
+    _pitch: 2.42
+    _source: {fileID: 0}
+    _isLoop: 0
+    _mixerGroup: {fileID: -10460048100142461, guid: e817678c468c93740bff744d6d32a190, type: 2}
+  - _nameClip: JumpSound
+    _clip: {fileID: 8300000, guid: 90b3fcaf4b39c884da559393f061a971, type: 3}
+    _volume: 0.34
+    _pitch: 2.42
+    _source: {fileID: 0}
+    _isLoop: 0
+    _mixerGroup: {fileID: -10460048100142461, guid: e817678c468c93740bff744d6d32a190, type: 2}
+  - _nameClip: MusicGameplay
+    _clip: {fileID: 8300000, guid: cf405fcb18ad6084d8613806f4dbe37f, type: 3}
+    _volume: 0.34
+    _pitch: 2.42
+    _source: {fileID: 0}
+    _isLoop: 1
+    _mixerGroup: {fileID: 1471259586302482374, guid: e817678c468c93740bff744d6d32a190, type: 2}
+  - _nameClip: Lose
+    _clip: {fileID: 8300000, guid: d5951de0a4f800b4e872766b900e0fa0, type: 3}
+    _volume: 0.5
+    _pitch: 2.05
+    _source: {fileID: 0}
+    _isLoop: 0
+    _mixerGroup: {fileID: -10460048100142461, guid: e817678c468c93740bff744d6d32a190, type: 2}
+  - _nameClip: ButtonPlay
+    _clip: {fileID: 8300000, guid: 9e6dcc75309feb9469c4a6640aedad50, type: 3}
+    _volume: 0.51
+    _pitch: 2.37
+    _source: {fileID: 0}
+    _isLoop: 0
+    _mixerGroup: {fileID: 4090991732320269259, guid: e817678c468c93740bff744d6d32a190, type: 2}
+  - _nameClip: SoundVictory
+    _clip: {fileID: 8300000, guid: 21109c78fe9ace641b7557c514436d7b, type: 3}
+    _volume: 0.5
+    _pitch: 2.42
+    _source: {fileID: 0}
+    _isLoop: 0
+    _mixerGroup: {fileID: -10460048100142461, guid: e817678c468c93740bff744d6d32a190, type: 2}
+  - _nameClip: CanvasGameplay
+    _clip: {fileID: 8300000, guid: 845922bc68819da4da39ff0e71ab10da, type: 3}
+    _volume: 0.34
+    _pitch: 2.42
+    _source: {fileID: 0}
+    _isLoop: 0
+    _mixerGroup: {fileID: -10460048100142461, guid: e817678c468c93740bff744d6d32a190, type: 2}
+  - _nameClip: CanvasButton
+    _clip: {fileID: 8300000, guid: cdbde052a7d85e64fb4d9a26db58e0ad, type: 3}
+    _volume: 0.51
+    _pitch: 2.2
+    _source: {fileID: 0}
+    _isLoop: 0
+    _mixerGroup: {fileID: -10460048100142461, guid: e817678c468c93740bff744d6d32a190, type: 2}
+  - _nameClip: MusicMenu
+    _clip: {fileID: 8300000, guid: f1028d311b1eed249bdc678b243b87b5, type: 3}
+    _volume: 0.42
+    _pitch: 2.05
+    _source: {fileID: 0}
+    _isLoop: 1
+    _mixerGroup: {fileID: 1471259586302482374, guid: e817678c468c93740bff744d6d32a190, type: 2}
+  - _nameClip: MusicGameplay
+    _clip: {fileID: 8300000, guid: cf405fcb18ad6084d8613806f4dbe37f, type: 3}
+    _volume: 0.34
+    _pitch: 2.42
+    _source: {fileID: 0}
+    _isLoop: 1
+    _mixerGroup: {fileID: 1471259586302482374, guid: e817678c468c93740bff744d6d32a190, type: 2}

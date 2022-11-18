@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class ManagerScene : MonoBehaviour
 {
-    public SoundManager soundManager;
 
     // Start is called before the first frame update
     void Start()
@@ -26,9 +25,9 @@ public class ManagerScene : MonoBehaviour
     }
     public void GoToPlay()
     {
-        soundManager.PlayButton();
-        StartCoroutine(PlaySound());
-        
+        FindObjectOfType<AudioManager>().Play("ButtonPlay");
+        SceneManager.LoadScene(1);
+        //StartCoroutine(PlaySound());
     }
 
     IEnumerator PlaySound()
