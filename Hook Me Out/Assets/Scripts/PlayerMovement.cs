@@ -1,4 +1,5 @@
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,13 +8,15 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed;
     Rigidbody2D rigiBody;
     public float jumpForce;
-    private bool canJump;
+    public bool hasJump = true;
     public LayerMask layerGround;
 
-    private Vector3 _joystickAxis;
+    public Vector3 _joystickAxisLeft;
     [SerializeField]
     private PlayerInput _playerInput;
-    
+    [SerializeField]
+    private PlayerAnimations animations;
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,24 +28,34 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        float horizontalInput = Input.GetAxis("Horizontal");
+        //float horizontalInput = Input.GetAxis("Horizontal");
         //float verticalInput = Input.GetAxis("Vertical");
 
-        //Vector2 movement = new Vector2 (_joystickAxis.x,0);
-        Vector2 movement = new Vector2 (horizontalInput,0);
+        Vector2 movement = new Vector2 (_joystickAxisLeft.x,0);
+        Debug.Log(_joystickAxisLeft.x);
+       // Vector2 movement = new Vector2 (horizontalInput,0);
         movement.Normalize();
 
         transform.Translate(movement * movementSpeed * Time.deltaTime);
 
        
-
-        RaycastHit2D HitGround;
-        Debug.DrawRay(transform.position, Vector2.down *  1f, Color.red);
-        if(Physics2D.Raycast(transform.position, Vector2.down , 1.5f, layerGround))
+        Debug.DrawRay(transform.position, Vector2.down *  0.5f, Color.red);
+        if(Physics2D.Raycast(transform.position, Vector2.down , 0.8f, layerGround))
         {
+            //Revisar si va cayendo para poner animacion de que cayó
+            if(hasJump == false)
+            {
+                animations.animatorPlayer.SetTrigger("Landing");
+                hasJump = true;
+                // Invoke(animations.IdlePlayer(), 0.5f);
+                StartCoroutine(IELandingToIdle());
+
+            }
+            
+
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button0))
             {
-                print(Input.GetKey(KeyCode.Joystick1Button0));
+                hasJump = false;
                 AudioManager.instance.Play("JumpSound");
                 rigiBody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             }
@@ -50,7 +63,12 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-   
+    IEnumerator IELandingToIdle()
+    {
+
+        yield return new WaitForSeconds(0.5F);
+        animations.animatorPlayer.SetTrigger("Idle");
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -62,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void MovementPlayer(InputAction.CallbackContext context)
     {
-        //_joystickAxis = context.ReadValue<Vector2>();
-        
+        _joystickAxisLeft = context.ReadValue<Vector2>();
     }
+
 }

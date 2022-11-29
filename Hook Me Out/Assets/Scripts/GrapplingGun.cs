@@ -27,7 +27,7 @@ public class GrapplingGun : MonoBehaviour
     public Rigidbody2D m_rigidbody;
 
     [Header("Rotation:")]
-    [SerializeField] private bool rotateOverTime = true;
+   // [SerializeField] private bool rotateOverTime = true;
     [Range(0, 60)] [SerializeField] private float rotationSpeed = 4;
 
     [Header("Distance:")]
