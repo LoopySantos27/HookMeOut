@@ -10,12 +10,14 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public bool hasJump = true;
     public LayerMask layerGround;
+    private Transform _respawnPlayer;
 
     public Vector3 _joystickAxisLeft;
     [SerializeField]
     private PlayerInput _playerInput;
     [SerializeField]
     private PlayerAnimations animations;
+
 
 
     // Start is called before the first frame update
@@ -39,8 +41,8 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(movement * movementSpeed * Time.deltaTime);
 
        
-        Debug.DrawRay(transform.position, Vector2.down *  0.5f, Color.red);
-        if(Physics2D.Raycast(transform.position, Vector2.down , 0.8f, layerGround))
+        Debug.DrawRay(transform.position, Vector2.down *  0.9f, Color.red);
+        if(Physics2D.Raycast(transform.position, Vector2.down , 0.9f, layerGround))
         {
             //Revisar si va cayendo para poner animacion de que cayó
             if(hasJump == false)
@@ -63,19 +65,24 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    IEnumerator IELandingToIdle()
-    {
 
-        yield return new WaitForSeconds(0.5F);
-        animations.animatorPlayer.SetTrigger("Idle");
-    }
+   
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("DeathArea"))
         {
             AudioManager.instance.Play("Lose");
+            _respawnPlayer = GameObject.FindGameObjectWithTag("SpawnPlayer").GetComponent<Transform>();
+            transform.position = _respawnPlayer.position;
+            print(_respawnPlayer);
         }
+    }
+    IEnumerator IELandingToIdle()
+    {
+
+        yield return new WaitForSeconds(0.5F);
+        animations.animatorPlayer.SetTrigger("Idle");
     }
 
     public void MovementPlayer(InputAction.CallbackContext context)

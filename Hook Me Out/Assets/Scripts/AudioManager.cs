@@ -47,4 +47,16 @@ public class AudioManager : MonoBehaviour
         }
         s._source.Play();
     }
+
+    public void StopMusic(string nameClip)
+    {
+        //Buscar en la lista de sonidos el clip que concuerde con el que se pidio
+        Sound s = Array.Find(sounds, sound => sound._nameClip == nameClip);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + "Not found!");
+            return;
+        }
+        s._source.Stop();
+    }
 }

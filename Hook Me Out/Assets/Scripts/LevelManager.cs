@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        AudioManager.instance.Play("MusicGameplay");
     }
 
     // Update is called once per frame

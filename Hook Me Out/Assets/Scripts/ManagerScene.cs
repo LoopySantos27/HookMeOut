@@ -6,28 +6,70 @@ using UnityEngine.SceneManagement;
 public class ManagerScene : MonoBehaviour
 {
 
+    public static ManagerScene instance;
+
+    [SerializeField]
+    private GameObject canvasPause;
+    private bool _isPaused;
+    [SerializeField]
+    private GameObject canvasGameplay;
+
+    Scene activeScene;
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {
         
+        //AudioManager.instance.Play("MusicMenu");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 
     public void ResetLevel()
     {
 
     }
+
     public void GoToPlay()
     {
-        FindObjectOfType<AudioManager>().Play("ButtonPlay");
+        AudioManager.instance.Play("ButtonPlay");
+        AudioManager.instance.StopMusic("MusicMenu");
         SceneManager.LoadScene(1);
         //StartCoroutine(PlaySound());
+    }
+
+    public void GoToMenu()
+    {
+        AudioManager.instance.Play("CanvasButton");
+        SceneManager.LoadScene(0);
+    }
+
+    public void PauseGameplay()
+    {
+        _isPaused = !_isPaused;
+        if(_isPaused)
+        {
+            
+            AudioManager.instance.StopMusic("MusicGameplay");
+            Time.timeScale = 0;
+            canvasPause.SetActive(true);
+        }
+        else
+        {
+            canvasPause.SetActive(false);
+            AudioManager.instance.Play("MusicGameplay");
+            Time.timeScale = 1;
+        }
+        
     }
 
     IEnumerator PlaySound()
