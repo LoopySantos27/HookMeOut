@@ -6,6 +6,8 @@ TagManager:
   tags:
   - DeathArea
   - SpawnPlayer
+  - DoorFinish
+  - CurrentLevel
   layers:
   - Default
   - TransparentFX

@@ -30,12 +30,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        //float horizontalInput = Input.GetAxis("Horizontal");
-        //float verticalInput = Input.GetAxis("Vertical");
-
         Vector2 movement = new Vector2 (_joystickAxisLeft.x,0);
-        Debug.Log(_joystickAxisLeft.x);
-       // Vector2 movement = new Vector2 (horizontalInput,0);
+        
         movement.Normalize();
 
         transform.Translate(movement * movementSpeed * Time.deltaTime);
@@ -49,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 animations.animatorPlayer.SetTrigger("Landing");
                 hasJump = true;
-                // Invoke(animations.IdlePlayer(), 0.5f);
+                //Invoke(animations.IdlePlayer(), 0.5f);
                 StartCoroutine(IELandingToIdle());
 
             }
@@ -62,10 +58,17 @@ public class PlayerMovement : MonoBehaviour
                 rigiBody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             }
         }
-        
+
     }
 
-
+    public void PauseGame()
+    {
+        ManagerScene.instance.PauseGameplay();
+    }
+    public void GoToMenu()
+    {
+        ManagerScene.instance.GoToMenu();
+    }
    
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -73,14 +76,10 @@ public class PlayerMovement : MonoBehaviour
         if(collision.gameObject.CompareTag("DeathArea"))
         {
             AudioManager.instance.Play("Lose");
-            _respawnPlayer = GameObject.FindGameObjectWithTag("SpawnPlayer").GetComponent<Transform>();
-            transform.position = _respawnPlayer.position;
-            print(_respawnPlayer);
         }
     }
     IEnumerator IELandingToIdle()
     {
-
         yield return new WaitForSeconds(0.5F);
         animations.animatorPlayer.SetTrigger("Idle");
     }

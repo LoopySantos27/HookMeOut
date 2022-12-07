@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1682017638927051513}
   - component: {fileID: 1682017638927051515}
   - component: {fileID: 1682017638927051514}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: GrappableSurface (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 1682017638948712339}
   - component: {fileID: 1682017638948712349}
   - component: {fileID: 1682017638948712348}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: NoGrappableFloor (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 1682017639431004849}
   - component: {fileID: 1682017639431004848}
   - component: {fileID: 1682017639431004855}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -350,6 +350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1682017639708470940}
   - component: {fileID: 1682017639708470941}
+  - component: {fileID: 3301158496093000412}
   m_Layer: 0
   m_Name: DeathArea (2)
   m_TagString: DeathArea
@@ -398,6 +399,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5251865, y: 3.7150064}
   m_EdgeRadius: 0
+--- !u!114 &3301158496093000412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682017639708470931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d538591195bea4587703ffa1065083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1682017639749000911
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,7 +422,7 @@ GameObject:
   - component: {fileID: 1682017639749000904}
   - component: {fileID: 1682017639749000906}
   - component: {fileID: 1682017639749000905}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: NoGrappableFloor (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +533,7 @@ GameObject:
   - component: {fileID: 1682017639907225730}
   - component: {fileID: 1682017639907225740}
   - component: {fileID: 1682017639907225731}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: NoGrappableFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -631,7 +644,8 @@ GameObject:
   - component: {fileID: 1682017640470199714}
   - component: {fileID: 1682017640470199724}
   - component: {fileID: 1682017640470199715}
-  m_Layer: 0
+  - component: {fileID: 2927443862227467243}
+  m_Layer: 3
   m_Name: DoorFinish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -731,6 +745,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!114 &2927443862227467243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682017640470199713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2776dbfbc62efa244b32019986cfa016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1682017640634496415
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,7 +768,7 @@ GameObject:
   - component: {fileID: 1682017640634496408}
   - component: {fileID: 1682017640634496410}
   - component: {fileID: 1682017640634496409}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: NoGrappableFloor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -853,7 +879,7 @@ GameObject:
   - component: {fileID: 1682017640723021670}
   - component: {fileID: 1682017640723021664}
   - component: {fileID: 1682017640723021671}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: GrappableSurface (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -964,7 +990,7 @@ GameObject:
   - component: {fileID: 1682017640756022853}
   m_Layer: 0
   m_Name: SpawnerPlayer
-  m_TagString: Untagged
+  m_TagString: SpawnPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -995,7 +1021,7 @@ GameObject:
   - component: {fileID: 1682017640788562640}
   - component: {fileID: 1682017640788562642}
   - component: {fileID: 1682017640788562641}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: GrappableSurface (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1106,11 +1132,11 @@ GameObject:
   - component: {fileID: 1682017640798435000}
   m_Layer: 3
   m_Name: Level1
-  m_TagString: Untagged
+  m_TagString: CurrentLevel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1682017640798435000
 Transform:
   m_ObjectHideFlags: 0
@@ -1119,7 +1145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682017640798435007}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.87, y: 1.8024924, z: -0.009482242}
+  m_LocalPosition: {x: 16.958036, y: 1.8179979, z: -0.009482242}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1136,6 +1162,7 @@ Transform:
   - {fileID: 1682017640756022853}
   - {fileID: 1682017640827345995}
   - {fileID: 1682017639708470940}
+  - {fileID: 1329868613108776672}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1149,6 +1176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1682017640827345995}
   - component: {fileID: 1682017640827346004}
+  - component: {fileID: 3379375504715539233}
   m_Layer: 0
   m_Name: DeathArea (1)
   m_TagString: DeathArea
@@ -1197,6 +1225,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.264829, y: 1.0244977}
   m_EdgeRadius: 0
+--- !u!114 &3379375504715539233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682017640827345994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d538591195bea4587703ffa1065083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1682017640841461323
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,7 +1248,7 @@ GameObject:
   - component: {fileID: 1682017640841461332}
   - component: {fileID: 1682017640841461334}
   - component: {fileID: 1682017640841461333}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: NoGrappableFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1308,3 +1348,69 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.235464, y: 1.28}
   m_EdgeRadius: 0
+--- !u!1001 &905904976160943283
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1682017640798435000}
+    m_Modifications:
+    - target: {fileID: 2226695436073095761, guid: d9c9298d8b2fba0498fdd0774e52b50b, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2226695436073095762, guid: d9c9298d8b2fba0498fdd0774e52b50b, type: 3}
+      propertyPath: m_Distance
+      value: 11.27975
+      objectReference: {fileID: 0}
+    - target: {fileID: 2226695436073095763, guid: d9c9298d8b2fba0498fdd0774e52b50b, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2226695436073095763, guid: d9c9298d8b2fba0498fdd0774e52b50b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.141799
+      objectReference: {fileID: 0}
+    - target: {fileID: 2226695436073095763, guid: d9c9298d8b2fba0498fdd0774e52b50b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.11228
+      objectReference: {fileID: 0}
+    - target: {fileID: 2226695436073095763, guid: d9c9298d8b2fba0498fdd0774e52b50b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.009482242
+      objectReference: {fileID: 0}
+    - target: {fileID: 2226695436073095763, guid: d9c9298d8b2fba0498fdd0774e52b50b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2226695436073095763, guid: d9c9298d8b2fba0498fdd0774e52b50b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2226695436073095763, guid: d9c9298d8b2fba0498fdd0774e52b50b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2226695436073095763, guid: d9c9298d8b2fba0498fdd0774e52b50b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2226695436073095763, guid: d9c9298d8b2fba0498fdd0774e52b50b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2226695436073095763, guid: d9c9298d8b2fba0498fdd0774e52b50b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2226695436073095763, guid: d9c9298d8b2fba0498fdd0774e52b50b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d9c9298d8b2fba0498fdd0774e52b50b, type: 3}
+--- !u!4 &1329868613108776672 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2226695436073095763, guid: d9c9298d8b2fba0498fdd0774e52b50b, type: 3}
+  m_PrefabInstance: {fileID: 905904976160943283}
+  m_PrefabAsset: {fileID: 0}

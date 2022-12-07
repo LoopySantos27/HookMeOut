@@ -12,7 +12,7 @@ public class ManagerScene : MonoBehaviour
     private GameObject canvasPause;
     private bool _isPaused;
     [SerializeField]
-    private GameObject canvasGameplay;
+    private GameObject WinDemo;
 
     Scene activeScene;
     private void Awake()
@@ -34,10 +34,6 @@ public class ManagerScene : MonoBehaviour
         //AudioManager.instance.Play("MusicMenu");
     }
 
-    public void ResetLevel()
-    {
-
-    }
 
     public void GoToPlay()
     {

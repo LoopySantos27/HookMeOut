@@ -32,5 +32,4 @@ public class PlayerAnimations : MonoBehaviour
         animatorPlayer.SetTrigger("Idle");
     }
 
-    
 }
